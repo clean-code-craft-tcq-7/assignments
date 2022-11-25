@@ -2,12 +2,8 @@
 
 A few notable submissions
 
-- https://github.com/clean-code-craft-tcq-7/well-named-in-cpp-nithinveerakumar/pull/1/files
-- https://github.com/clean-code-craft-tcq-7/well-named-in-c-RanjithPrabhuu/pull/1/files
-- https://github.com/clean-code-craft-tcq-7/well-named-in-js-Chaithra-BabuReddy/pull/1/files
-- https://github.com/clean-code-craft-tcq-7/well-named-in-c-MatheswaranPalanisamy/pull/1/files
-- https://github.com/clean-code-craft-tcq-7/well-named-in-cpp-saikrishna42-python/pull/1/files
-
+- [Fine-grained organization in files](https://github.com/clean-code-craft-tcq-7/well-named-in-c-RanjithPrabhuu)
+- [Organization as per functionality](https://github.com/clean-code-craft-tcq-7/well-named-in-js-Chaithra-BabuReddy/tree/main/app)
 
 Always separate tests from regular functionality - E.g., E.g., `testPairToNumber` and `GetColorFromPairNumber`.
 Or else all clients of this software will receive test code as well.
