@@ -23,7 +23,9 @@ Fri - session / recap + next
 
 ## Try It
 
-[Pass the failing test](pass.md)
+[Reduce complexity with abstraction](functional.md)
+
+[Pass the failing test](pass.md) and [recap](pass-recap.md)
 
 [Fail on false positive](fail.md) and [recap](fail-recap.md)
 
