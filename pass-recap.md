@@ -1,12 +1,30 @@
 # Recap of passing code
 
+[Alignment test example](https://github.com/clean-code-craft-tcq-7/test-failer-in-py-KarthikeyaniShanmugam/blob/92347a9f0c5f7efbed82e4d6ce574a4bc98f0196/misaligned.py)
+
 [Test as documentation](https://github.com/clean-code-craft-tcq-m-2/test-failer-in-c-DanOrta/blob/27253237b7a08eedf5fb1db377a5b675d264ef36/misaligned-test.c)
 
 [Use of function objects in C++ for dependency injection](https://github.com/clean-code-craft-tcq-m-2/test-failer-in-cpp-RicardoGuD/blob/f966aa113272f9fca80bceeedbaa98a96e068535/alerterTest.cpp)
 
 [Off-the-shelf functionality for alignment](https://github.com/clean-code-craft-tcq-m-2/test-failer-in-py-JorgeRuizMtz/blob/251dffae203ee948b11cca2941048515f9b7fdb5/misaligned_fixed%26Test.py)
 
+---
 
+Map tests to real life. Do you think a person with a 42-cm shoulder should get a t-shirt of 'invalid' size?
+
+```java
+	public static void main(String args[]) {
+		assert (Tshirts.size(37) == "S");
+		assert (Tshirts.size(38) == "INVALID");
+		assert (Tshirts.size(40) == "M");
+		assert (Tshirts.size(42) == "INVALID");
+		assert (Tshirts.size(43) == "L");
+		System.out.println("All is well (maybe!)");
+	}
+}
+```
+
+---
 
 Testing and running different code...
 
