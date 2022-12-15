@@ -1,10 +1,26 @@
 # Reduce complexity - Recap
 
-## Abstractions
+## Abstractions and domain
 
 Feed an array of values and limits to [check_battery_status](https://github.com/clean-code-craft-tcq-7/simple-monitor-in-py-Fasith/blob/66b95cb2676f58bc3ae05117207c8421bf377417/check_limits.py)
 
 Extension with more parameters does not increase the complexity of [batteryIsOk](https://github.com/clean-code-craft-tcq-7/simple-monitor-in-c-NabilCob/blob/5bf1296f3399d68cc5e7e42b2005a60621fbaa03/BatteryStatus.c)
+
+[Avoid primitive obsession](https://refactoring.guru/smells/primitive-obsession).
+This code is in the right direction:
+
+```c
+int batteryIsOk() 
+{
+  if(get_OutOfRange_Status() == 0)
+    return E_OK;
+  else
+    return E_NOT_OK;
+}
+```
+
+Can you think of a more domain-specific name?
+
 
 ---
 
