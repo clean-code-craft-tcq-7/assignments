@@ -44,7 +44,7 @@ bool minBoundaryCheck(float value,float min) {
 
 ## Complexity warning -> Concise code
 
-Complexity of 4:
+Here is a code with complexity of 4. See the improvement below:
 
 ```cs
 bool CheckBatteryIsOk(float temperature, float soc, float chargeRate) 
@@ -60,7 +60,7 @@ bool CheckBatteryIsOk(float temperature, float soc, float chargeRate)
 }
 ```
 
-...is an indication to write concisely
+Complexity-prompt is an indication to write concisely
 
 ```cs
 bool CheckBatteryIsOk(float temperature, float soc, float chargeRate) 
@@ -101,3 +101,38 @@ bool ValidateTemperatureAndStateOfCharge(float temperature_data, float soc)
 - https://github.com/clean-code-craft-tcq-4/simple-monitor-in-cpp-ankit-88/blob/714e62b76caff73c3230c8d95654fd3920dd2fdd/checker.hpp
 - https://github.com/clean-code-craft-tcq-4/simple-monitor-in-py-rahulkumar082
 
+## Extensions
+
+[Isolating all language strings in a file](https://github.com/clean-code-craft-tcq-7/simple-monitor-in-java-SrinathS10/blob/0d3daa75b73d6989af73c45e3d5ad9b812effcf9/BatteryMessages.txt). The fact that it's a txt file makes it easier to exchange with a translation agency.
+
+Think of a test to ascertain if all strings got translated, that the translation agency did not miss any translations.
+
+---
+
+Naming: Is `checkTemperature` returning true when temperature is ok? Or when some action is needed? What does it do when it needs to warn? Try another name to express its purpose.
+
+```c
+assert(checkTemperature(33.0));
+assert(!checkTemperature(-52.0));
+```
+
+---
+
+Dynamically changing language at runtime is not needed, but it does make testing easier. Note the use of `SelectLanguageandWarnigMessage` [in this repo](https://github.com/clean-code-craft-tcq-7/simple-monitor-in-c-azharmj/blob/4b9dc2ccc1106de063df24aa26c46d891decb4fe/checker.c), and `setPrintLanguage` in [this repo](https://github.com/clean-code-craft-tcq-7/simple-monitor-in-c-balasu-tcqtest/blob/6e82a49854a44a3cfdac5dfa386881594ee5afc7/test_cases.c).
+Both have employed dynamic language selection, instead of compiler directives to change the language.
+
+---
+
+Consider tests for messages:
+
+```c
+    printTempratureMessage(LOW_VALUE_WARNING, &testPrintFunc);
+    assert(strcmp(testString, "Low Temperature Warning\n") == 0);
+    setPrintLanguage(GERMAN);
+    printTempratureMessage(LOW_VALUE_WARNING, &testPrintFunc);
+    assert(strcmp(testString, "Warnung vor niedriger Temperatur\n") == 0);
+```
+
+While these tests bring confidence that the texts are exactly as we intend them to be, they bring double-work: Any change in text has to be done twice now.
+
+Think of a way to test the 'minimum required' behavior of the texts. For example: assert that they should mention the measure (temperature), it's status (low) and its severity (warning), checking for spelling and capitalization. That way, it can be made better / customized as per user's preferences, while still ensuring the basic health of the message.
