@@ -1,5 +1,7 @@
 # TDD First step - recap
 
+[Requirements as inputs and outputs](https://github.com/clean-code-craft-tcq-7/tdd-buckets-Souravkumar2434/blob/05222b0e3ab26970cd8bcdd421054d19d7d3c000/Requirements.txt) and their [corresponding tests](https://github.com/clean-code-craft-tcq-7/tdd-buckets-Souravkumar2434/blob/05222b0e3ab26970cd8bcdd421054d19d7d3c000/continuous_range_and_number_of_readings_finder_test.py)
+
 [Data-driven tests](https://github.com/clean-code-craft-tcq-7/tdd-buckets-omprakashs855/blob/f63148ecf5b817958e2b956a79b2234b9a4c9edf/inc/test_case.json)
 
 ---
